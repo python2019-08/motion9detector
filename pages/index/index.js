@@ -12,6 +12,8 @@ Page({
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
+
+  
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs'

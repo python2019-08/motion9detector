@@ -1,0 +1,24 @@
+/* components/three-cube/three-cube.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+
+.info text {
+  margin: 0 10px;
+  color: #333;
+}

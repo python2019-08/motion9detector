@@ -1,0 +1,9 @@
+<!-- components/three-cube/three-cube.wxml -->
+<view class="container">
+  <canvas type="webgl" id="webgl" class="canvas" style="width: {{width}}px; height: {{height}}px;"></canvas>
+  <view class="info" wx:if="{{showInfo}}">
+    <text>X: {{rotation.x.toFixed(2)}}°</text>
+    <text>Y: {{rotation.y.toFixed(2)}}°</text>
+    <text>Z: {{rotation.z.toFixed(2)}}°</text>
+  </view>
+</view>

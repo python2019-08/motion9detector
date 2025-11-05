@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="status-section">
+    <text class="status-title">运动状态:</text>
+    <text class="status-value {{motionStateClass}}">{{motionStateText}}</text>
+  </view>
+  
+  <view class="direction-section">
+    <text class="direction-title">当前方向:</text>
+    <text class="direction-value">{{directionText}}</text>
+  </view>
+  
+  <view class="data-section">
+    <text>X轴角速度: {{gyroData.x}} rad/s</text>
+    <text>Y轴角速度: {{gyroData.y}} rad/s</text>
+    <text>Z轴角速度: {{gyroData.z}} rad/s</text>
+  </view>
+  
+  <view class="canvas-container">
+    <canvas 
+      canvas-id="motionCanvas" 
+      class="motion-canvas"
+      disable-scroll="true"
+      bindtouchstart="canvasTouchStart"
+      bindtouchmove="canvasTouchMove"
+      bindtouchend="canvasTouchEnd">
+    </canvas>
+  </view>
+  
+  <view class="control-section">
+    <button class="control-btn {{isMonitoring ? 'stop' : 'start'}}" 
+            bindtap="toggleMonitoring">
+      {{isMonitoring ? '停止监测' : '开始监测'}}
+    </button>
+    <button class="control-btn clear" bindtap="clearCanvas">清除轨迹</button>
+  </view>
+</view>

@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/gyroinfo/gyroinfo",
+    "pages/tracker2/tracker2", 
     "pages/logs/logs"
   ],
   "window": {
