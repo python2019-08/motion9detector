@@ -1,0 +1,226 @@
+.container {
+  padding: 10rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.status-card, .data-card, .sensor-card, .control-card {
+  width: 90%;
+  background: white;
+  border-radius: 20rpx;
+  padding: 5rpx;
+  margin: 5rpx 0;
+  box-shadow: 0 5rpx 30rpx rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rpx 0;
+  padding: 5rpx;
+  background: #f8f9fa;
+  border-radius: 5rpx;
+}
+
+.label {
+  font-size: 32rpx;
+  color: #666;
+}
+
+.value {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 5rpx 5rpx;
+  border-radius: 20rpx;
+}
+
+.value.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.value.inactive {
+  background: #9E9E9E;
+  color: white;
+}
+
+.value.walking {
+  background: #2196F3;
+  color: white;
+}
+
+.direction-forward {
+  background: #4CAF50;
+  color: white;
+}
+
+.direction-backward {
+  background: #FF9800;
+  color: white;
+}
+
+.direction-stationary {
+  background: #9E9E9E;
+  color: white;
+}
+
+.direction-uncertain {
+  background: #FFC107;
+  color: white;
+}
+
+.data-grid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.data-item {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.data-value {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #2196F3;
+}
+
+.data-label {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.sensor-data {
+  background: #f8f9fa;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.sensor-data text {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  margin: 10rpx 0;
+  font-family: 'Courier New', monospace;
+}
+
+/* canvas */
+.canvas-card {
+  width: 90%;
+  height: 400rpx;
+  background: white;
+  border-radius: 10rpx;
+  margin-bottom: 5rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.motion-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* control-card */
+.control-card {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.control-btn {
+  margin: 10rpx;
+  padding: 20rpx 40rpx;
+  border: none;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  width: 45%;
+}
+
+.control-btn.start {
+  background: #4CAF50;
+}
+
+.control-btn.stop {
+  background: #F44336;
+}
+
+.control-btn.reset {
+  background: #FF9800;
+}
+
+.control-btn.settings {
+  background: #2196F3;
+}
+
+.control-btn.confirm {
+  background: #4CAF50;
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.settings-panel.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.settings-content {
+  background: white;
+  width: 80%;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  transform: translateY(50rpx);
+  transition: transform 0.3s;
+}
+
+.settings-panel.show .settings-content {
+  transform: translateY(0);
+}
+
+.settings-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+  display: block;
+}
+
+.param-item {
+  margin: 40rpx 0;
+}
+
+.param-label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}

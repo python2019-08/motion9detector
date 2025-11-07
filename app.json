@@ -1,13 +1,47 @@
 {
   "pages": [
+    "pages/motiondetector1/motiondetector1",
     "pages/tracker2/tracker2", 
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#2196F3",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/motiondetector1/motiondetector1",
+        "text": "首页",
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home.png"
+      },
+      {
+        "pagePath": "pages/tracker2/tracker2",
+        "text": "tracker2",
+        "iconPath": "images/tab-monitor.png",
+        "selectedIconPath": "images/tab-monitor.png"
+      },
+      {
+        "pagePath": "pages/logs/logs", 
+        "text": "历史",
+        "iconPath": "images/tab-history.png",
+        "selectedIconPath": "images/tab-history.png"
+      } 
+    ]
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "MotionDetector",
     "navigationBarBackgroundColor": "#ffffff"
   },
+  "requiredPrivateInfos": ["getLocation"],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于运动检测功能"
+    }
+  },  
+  "libVersion": "2.9.0",
+  "useWebWorker": false,  
   "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",

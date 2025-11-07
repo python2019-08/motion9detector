@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="status-card">
+    <!-- <text class="card-title">运动状态监测</text> -->
+    
+    <view class="status-item">
+      <text class="label">移动状态:</text>
+      <text class="value {{motionState.isMoving ? 'active' : 'inactive'}}">
+        {{motionState.isMoving ? '移动中' : '静止'}}
+      </text>
+    </view>
+    
+    <view class="status-item">
+      <text class="label">行走状态:</text>
+      <text class="value {{motionState.isWalking ? 'walking' : 'inactive'}}">
+        {{motionState.isWalking ? '行走中' : '未行走'}}
+      </text>
+    </view>
+    
+    <view class="status-item">
+      <text class="label">移动方向:</text>
+      <text class="value direction-{{motionState.direction}}">
+        {{directionText}}
+      </text>
+    </view>
+  </view>
+
+  <view class="data-card">
+    <!-- <text class="card-title">实时数据</text> -->
+    
+    <view class="data-grid">
+      <view class="data-item">
+        <text class="data-value">{{motionState.distance}}</text>
+        <text class="data-label">距离(米)</text>
+      </view>
+      
+      <view class="data-item">
+        <text class="data-value">{{motionState.speed}}</text>
+        <text class="data-label">速度(m/s)</text>
+      </view>
+      
+      <view class="data-item">
+        <text class="data-value">{{motionState.stepCount}}</text>
+        <text class="data-label">步数</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="sensor-card">
+    <text class="card-title">传感器数据</text>
+    
+    <view class="sensor-data">
+      <text>加速度: X:{{sensorDisplayData.accel.x}} Y:{{sensorDisplayData.accel.y}} Z:{{sensorDisplayData.accel.z}}</text>
+      <text>陀螺仪: X:{{sensorDisplayData.gyro.x}} Y:{{sensorDisplayData.gyro.y}} Z:{{sensorDisplayData.gyro.z}}</text>
+    </view>
+  </view>
+<!-- 
+
+ -->
+  <view class="canvas-card">
+    <canvas  type="2d"  id="motionCanvas"
+      class="motion-canvas"
+      disable-scroll="true"
+      bindtouchstart="canvasTouchStart"
+      bindtouchmove="canvasTouchMove"
+      bindtouchend="canvasTouchEnd"
+    > </canvas>
+  </view>
+
+  <view class="control-card">
+    <button class="control-btn {{isMonitoring ? 'stop' : 'start'}}" 
+            bindtap="toggleMonitoring">
+      {{isMonitoring ? '停止监测' : '开始监测'}}
+    </button>
+    
+    <button class="control-btn reset" bindtap="resetData">重置</button>    
+    <button class="control-btn settings" bindtap="showSettings">参数设置</button>
+  </view>
+
+  <!-- 参数设置面板 -->
+  <view class="settings-panel {{showSettingsPanel ? 'show' : ''}}">
+    <view class="settings-content">
+      <text class="settings-title">算法参数调整</text>
+      
+      <view class="param-item">
+        <text class="param-label">步伐阈值: {{params.stepThreshold}}</text>
+        <slider value="{{params.stepThreshold}}" min="0.5" max="2.0" step="0.1" 
+                bindchange="onStepThresholdChange"/>
+      </view>
+      
+      <view class="param-item">
+        <text class="param-label">行走阈值: {{params.walkThreshold}}</text>
+        <slider value="{{params.walkThreshold}}" min="0.05" max="0.3" step="0.01" 
+                bindchange="onWalkThresholdChange"/>
+      </view>
+      
+      <view class="param-item">
+        <text class="param-label">平均步长: {{params.avgStepLength}}米</text>
+        <slider value="{{params.avgStepLength}}" min="0.5" max="1.0" step="0.05" 
+                bindchange="onStepLengthChange"/>
+      </view>
+      
+      <button class="control-btn confirm" bindtap="hideSettings">确认</button>
+    </view>
+  </view>
+</view>

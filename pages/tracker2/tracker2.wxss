@@ -11,11 +11,11 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
-  margin: 20rpx 0;
+  margin: 10rpx 0;
   padding: 20rpx;
   background: white;
-  border-radius: 10rpx;
-  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+  border-radius: 4rpx;
+  box-shadow: 0 4rpx 4rpx rgba(0,0,0,0.1);
 }
 
 .status-title, .direction-title {
